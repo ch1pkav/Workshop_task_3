@@ -1,1 +1,3 @@
-# Workshop_task_3
+# Battle ship game
+This is two player game of battleship
+.
