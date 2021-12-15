@@ -26,21 +26,12 @@ def main():
         player1_won = all("B" not in row for row in player2_board)
         player2_won = all("B" not in row for row in player1_board)
 
-<<<<<<< HEAD
     if player1_won and player2_won:
         print('It\'s a tie!')
     elif player1_won:
         print("Player 1 won!")
     else:
         print("Player 2 won!")
-=======
-The third ship size is: 1*1
-it looks like this:
-+
-The fourth ship size is: 1*1
-it looks like this:"""
->>>>>>> ac34de7e12da52e69a5023ad66db0b3e23262b8d
-
 
 def greetings():
     """
@@ -74,7 +65,6 @@ def put_ships(board: list):
     player puts their ships
     """
 
-<<<<<<< HEAD
     print("""
 Now you are to put your ships on the field.
 You are provided with 4 ships:
@@ -170,13 +160,11 @@ def small_ship(board: list):
 
 
 def ship_putter(board: list):
-=======
     return """
 Hello! Welcome to the Battleship game in which your
 main task is to destroy all the enemys ships with right
 choices to fire.
 """
->>>>>>> ac34de7e12da52e69a5023ad66db0b3e23262b8d
 
 
 def shot(showed_board: list):
@@ -187,7 +175,6 @@ def shot(showed_board: list):
 Now you are provided with a shot, choose right coordinates
 to fire enemys ships.
 """)
-<<<<<<< HEAD
 
     for row in board:
         print(" ".join(row))
@@ -195,7 +182,6 @@ to fire enemys ships.
     fire_col = input("Enter your shot column coord (0-4): ")
     fire_row = input("Enter your shot row coord (0-4): ")
 
-=======
     player_shot_row=int(input('Guess row:'))
     player_shot_col=int(input('Guess col:'))
     while player_shot_row >4 or player_shot_col>4 or player_shot_row <0 or player_shot_col<0:
@@ -210,7 +196,6 @@ to fire enemys ships.
     else:
         print('You missed')
     return showed_board
->>>>>>> ac34de7e12da52e69a5023ad66db0b3e23262b8d
 
 if __name__ == "__main__":
     main()
