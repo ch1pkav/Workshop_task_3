@@ -74,9 +74,10 @@ def shot(showed_board: list):
 Now you are provided with a shot, choose right coordinates
 to fire enemys ships.
 """)
-    player_shot_row = 10
-    player_shot_col = 10
+    player_shot_row=int(input('Guess row:'))
+    player_shot_col=int(input('Guess col:'))
     while player_shot_row >4 or player_shot_col>4 or player_shot_row <0 or player_shot_col<0:
+        print('This point is not in the sea')
         player_shot_row=int(input('Guess row:'))
         player_shot_col=int(input('Guess col:'))
         if player_shot_row <=4 and player_shot_col<=4 and player_shot_row >=0 and player_shot_col>=0:
