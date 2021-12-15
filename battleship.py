@@ -7,10 +7,31 @@ def main():
     """
     the main function
     """
+    print(greetings())
 
-    greetings()
+    player1_board = board_generator()
+    player2_board = board_generator()
 
-    board = board_generator()
+    player1_board = put_ships(player1_board)
+    player2_board = put_ships(player2_board)
+
+    player1_won = False
+    player2_won = False
+
+    while not player1_won and not player2_won:
+        print("Player 1, take a shot!")
+        player2_board = shot(player2_board)
+        print("Player 2, take a shot!")
+        player1_board = shot(player1_board)
+        player1_won = all("B" not in row for row in player2_board)
+        player2_won = all("B" not in row for row in player1_board)
+
+    if player1_won and player2_won:
+        print('It\'s a tie!')
+    elif player1_won:
+        print("Player 1 won!")
+    else:
+        print("Player 2 won!")
 
 
 def greetings():
