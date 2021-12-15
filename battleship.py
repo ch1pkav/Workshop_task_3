@@ -13,30 +13,16 @@ def main():
     board = board_generator()
 
 
-def put_ships():
+def greetings():
     """
-    player puts their ships
+    greetings and rules
     """
 
-    print("""
-Now you are to put your ships on the field.
-you are provided with 4 ships:
-The first ship size is: 1*3
-it looks like this:
-+
-+
-+
-The second ship size is 2*1:
-++
-
-The third ship size is: 1*1
-it looks like this:
-+
-The fourth ship size is: 1*1
-it looks like this:
-
-
-
+    return """
+Hello! Welcome to the Battleship game in which your
+main task is to destroy all the enemy's ships with right
+choices to fire.
+"""
 
 
 def board_generator():
@@ -54,16 +40,32 @@ def board_generator():
     return field
 
 
-def greetings():
+def put_ships():
     """
-    greetings and rules
+    player puts their ships
     """
 
-    return """
-Hello! Welcome to the Battleship game in which your
-main task is to destroy all the enemy's ships with right
-choices to fire.
-"""
+    print("""
+Now you are to put your ships on the field.
+You are provided with 4 ships:
+
+The first ship size is 1*3:
++
++
++
+
+The second ship size is 2*1:
+++
+
+The third ship size is 1*1:
++
+
+The fourth ship size is 1*1:
++
+""")
+
+    coord_col = input("Choose column coord for your first ship (0-4): ")
+    row_col = input("Choose row coord for your first ship (0-4): ")
 
 
 def shot(board: list):
@@ -81,9 +83,6 @@ to fire enemy's ships.
 
     fire_col = input("Enter your shot column coord (0-4): ")
     fire_row = input("Enter your shot row coord (0-4): ")
-
-
-
 
 
 if __name__ == "__main__":
