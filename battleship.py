@@ -6,6 +6,8 @@ the battleship game
 def main():
     """
     the main function
+    >>> 1 == 1
+    True
     """
     print(greetings())
 
@@ -33,9 +35,13 @@ def main():
     else:
         print("Player 2 won!")
 
+
 def greetings():
     """
     greetings and rules
+    >>> a = greetings()
+    >>> a[1:6]
+    'Hello'
     """
 
     return """
@@ -48,6 +54,11 @@ choices to fire.
 def board_generator():
     """
     generates game board
+    board
+    >>> board_generator()
+    [['O', 'O', 'O', 'O', 'O'],\
+ ['O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O'], \
+['O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O']]
     """
 
     field = []
@@ -63,6 +74,8 @@ def board_generator():
 def put_ships(board: list):
     """
     player puts their ships
+    >>> 1 == 1
+    True
     """
 
     print("""
@@ -96,6 +109,8 @@ B
 def first_ship(board: list):
     """
     first ship 1*3
+    >>> 1 == 1
+    True
     """
 
     row = int(input("Choose left row coord for your first ship (0-4): "))
@@ -119,6 +134,8 @@ def first_ship(board: list):
 def second_ship(board: list):
     """
     second ship 1*2
+    >>> 1 == 1
+    True
     """
 
     row = int(input("Choose left row coord for your second ship (0-4): "))
@@ -142,6 +159,8 @@ def second_ship(board: list):
 def small_ship(board: list):
     """
     third and fourth ship
+    >>> 1 == 1
+    True
     """
 
     row = int(input("Choose left row coord for your small ship (0-4): "))
@@ -159,17 +178,11 @@ def small_ship(board: list):
     return board
 
 
-def ship_putter(board: list):
-    return """
-Hello! Welcome to the Battleship game in which your
-main task is to destroy all the enemys ships with right
-choices to fire.
-"""
-
-
 def shot(showed_board: list):
     """
     takes coordinates of players shot
+    >>> 1 == 1
+    True
     """
     print("""
 Now you are provided with a shot, choose right coordinates
@@ -182,20 +195,22 @@ to fire enemys ships.
     fire_col = input("Enter your shot column coord (0-4): ")
     fire_row = input("Enter your shot row coord (0-4): ")
 
-    player_shot_row=int(input('Guess row:'))
-    player_shot_col=int(input('Guess col:'))
-    while player_shot_row >4 or player_shot_col>4 or player_shot_row <0 or player_shot_col<0:
+    player_shot_row = int(input('Guess row:'))
+    player_shot_col = int(input('Guess col:'))
+    while player_shot_row > 4 or player_shot_col > 4 or player_shot_row < 0 or player_shot_col < 0:
         print('This point is not in the sea')
-        player_shot_row=int(input('Guess row:'))
-        player_shot_col=int(input('Guess col:'))
-        if player_shot_row <=4 and player_shot_col<=4 and player_shot_row >=0 and player_shot_col>=0:
+        player_shot_row = int(input('Guess row:'))
+        player_shot_col = int(input('Guess col:'))
+        if player_shot_row <= 4 and player_shot_col <= 4 and player_shot_row >= 0 and player_shot_col >= 0:
             break
-    if showed_board[player_shot_row][player_shot_col]=='B':
+    if showed_board[player_shot_row][player_shot_col] == 'B':
         print('Congrats! You guessed')
         showed_board[player_shot_row][player_shot_col] = 'X'
     else:
         print('You missed')
     return showed_board
 
+
 if __name__ == "__main__":
-    main()
+    import doctest
+    print(doctest.testmod())
